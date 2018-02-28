@@ -95,6 +95,14 @@ router.post('/rejectItemRequest', (req,res)=>{
    });
 });
 
+router.get('/allPayments', (req,res)=>{
+	db.query(`Select * from tblpayment join tbltransaction on tblpayment.intTransactionNo = tbltransaction.intTransactionNo join tblevent on tblevent.intEventNo = tbltransaction.intEventNo join tblorganizer on tblevent.intOrganizerID = tblorganizer.intOrganizerID join tbladmin on tbladmin.intAdminID = tblpayment.intAdminID `, (err, results, fields)=>{
+		if (err) console.log(err);
+		console.log(results);
+		res.render('admin/views/payments',  {user: `${req.session.user.strAdminFName}`+" "+`${req.session.user.strAdminLName}`, content: results});
+	});
+});
+
 
 
 
