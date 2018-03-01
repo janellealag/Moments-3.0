@@ -31,7 +31,7 @@
 						<h5 class="card-text" align=left><strong>Cellphone Number: </strong><%= i.strProviderCell %></h5>
 						<table align=center>
 							<tr>
-								<td><button type="submit" class="evaluateButton btn btn-primary" data-toggle="modal" data-target="#confirmationOfBusinessman" data-providerfname="<%= i.strProviderFName %>" data-providermname="<%= i.strProviderMName%>" data-providerlname="<%= i.strProviderLName%>" data-providerEmail="<%=i.strProviderEmail%>" data-providertel="<%=i.strProvidertel%>" data-providercel="<%=i.strProviderCell%>" data-providerid="<%=i.intProviderID%>" data-providerlocation="<%=i.strCity%>,<%=i.strProvince%>" data-providerbusinessname="<%=i.strProviderBusinessName%>"  data-providerBir="<%=i.strProviderBIR%>" data-providerDti="<%=i.strProviderDTI%>" >Evaluate</button></td>
+								<td><button type="submit" class="evaluateButton btn btn-primary" data-toggle="modal" data-target="#confirmationOfBusinessman" data-providerfname="<%= i.strProviderFName %>" data-providermname="<%= i.strProviderMName%>" data-providerlname="<%= i.strProviderLName%>" data-providerEmail="<%=i.strProviderEmail%>" data-providertel="<%=i.strProvidertel%>" data-providercel="<%=i.strProviderCell%>" data-providerid="<%=i.intProviderID%>" data-providerlocation="<%=i.strCity%>,<%=i.strProvince%>" data-providerbusinessname="<%=i.strProviderBusinessName%>"  data-beer="<%=i.strProviderBIR%>" data-deet="<%=i.strProviderDTI%>" data-bankis="<%=i.strBankNo%>" data-bankis1="<%=i.strBankName%>"  >Evaluate</button></td>
 
 
 							</tr>
@@ -178,8 +178,10 @@
               $('#CelNo').val($(this).data('providercel'))
               $('#idNumber').val($(this).data('providerid'))
               $('#searchbox').val($(this).data('providerlocation'))
-              $('#pbir').val($(this).data('providerBir'))
-              $('#pdti').val($(this).data('providerDti'))
+              $('#pbir').val($(this).data('beer'))
+              $('#pdti').val($(this).data('deet'))
+              $('#BankNumber').val($(this).data('bankis'))
+              $('#BankName').val($(this).data('bankis1'))
               $('#BusinessName').val($(this).data('providerbusinessname'))
 
 

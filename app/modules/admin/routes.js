@@ -103,7 +103,19 @@ router.get('/allPayments', (req,res)=>{
 	});
 });
 
+router.post('/confirmPayment', (req,res)=>{
+	db.query(`UPDATE tblpayment SET intStatus = ${1}, intAdminID = ${req.session.user.intAdminID} where intPaymentNo = ${req.body.payid} `, (err, results, fields)=>{
+		if (err) console.log(err);
+		res.redirect('/admin/allPayments');
+	});
+});
 
+router.post('/rejectPayment', (req,res)=>{
+	db.query(`UPDATE tblpayment SET intStatus = ${3}, intAdminID = ${req.session.user.intAdminID} where intPaymentNo = ${req.body.payid} `, (err, results, fields)=>{
+		if (err) console.log(err);
+		res.redirect('/admin/allPayments');
+	});
+});
 
 
 
