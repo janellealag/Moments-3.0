@@ -34,6 +34,8 @@ intPaymentNo int not null primary key
 AUTO_INCREMENT,
 intTransactionNo int not null,
 decAmountPaid decimal(9,2) not null
+intStatus int(1) not null default 0,
+intAdminID int(11) not null
 );
 
 CREATE table tblServices (
